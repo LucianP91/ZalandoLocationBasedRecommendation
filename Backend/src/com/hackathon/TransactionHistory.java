@@ -3,6 +3,7 @@ package Backend.src.com.hackathon;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Marciana on 19.11.2015.
@@ -37,7 +38,7 @@ public class TransactionHistory {
             ArrayList<Transaction> hist= history.get(id);
             for(Transaction t: hist){
                 double dist= loc.getDistance(t.getCustomer().getHome());
-                long days=now.getTimeInMillis()-t.getTransactionTime().getTimeInMillis();
+                long days= TimeUnit.MILLISECONDS.toDays(now.getTimeInMillis()-t.getTransactionTime().getTimeInMillis());
                if(dist<=RADIUS && days <=HISTORYDAYS){
                    count++;
                }
