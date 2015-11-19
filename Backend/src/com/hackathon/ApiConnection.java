@@ -3,11 +3,9 @@ package Backend.src.com.hackathon;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -31,7 +29,7 @@ public class ApiConnection {
             String line;
             System.out.println("Fetching url...");
             while ((line = reader.readLine()) != null) {
-                System.out.println(line);
+                //System.out.println(line);
                 response.append(line);
             }
             System.out.println("Fetching done, decoding...");
