@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ZalandoLocationBasedRecommendation.iml" filepath="$PROJECT_DIR$/.idea/ZalandoLocationBasedRecommendation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ZalandoLocationBasedRecommendation.iml" filepath="$PROJECT_DIR$/ZalandoLocationBasedRecommendation.iml" />
     </modules>
   </component>
 </project>
