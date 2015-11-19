@@ -1,4 +1,4 @@
-package com.hackathon;
+package Backend.src.com.hackathon;
 
 public class Main {
 
