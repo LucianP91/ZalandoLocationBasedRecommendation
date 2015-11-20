@@ -5,6 +5,8 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello Backend.");
+        //ApiConnection.curlURL(APIURL);
+        //System.out.println(ApiConnection.getIpDetails("134.61.129.229"));
         ApiConnection.curlURL(APIURL);
         Location Aachen= new Location(50.7753455,6.0838868);
         Location Berlin = new Location(52.519171,13.4060912);
