@@ -116,7 +116,7 @@ public class ApiConnection {
         final JSONArray imageArr =(JSONArray)((JSONObject)dress.get("media")).get("images");
         if (hasPrice) {
             final JSONObject priceObj = (JSONObject) ((JSONObject) ((JSONArray) dress.get("units")).get(0)).get("price");
-            price = ("" + priceObj.get("formatted")).replaceAll("\u00A3", "Pounds ");
+            price = ("" + priceObj.get("formatted")).substring(1);
         } else {
             price = "";
         }
