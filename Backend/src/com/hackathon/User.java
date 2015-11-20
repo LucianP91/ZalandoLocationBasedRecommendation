@@ -1,5 +1,4 @@
 package Backend.src.com.hackathon;
-import Backend.src.com.hackathon.Location;
 
 public class User {
     private String firstName;
