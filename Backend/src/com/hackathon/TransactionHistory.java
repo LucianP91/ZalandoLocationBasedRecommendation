@@ -66,4 +66,9 @@ public class TransactionHistory {
             return count;
         }
     }
+    public int numberOfPurchasesNearby(String id, String ip){
+        IpDetails ipd = ApiConnection.getIpDetails(ip);
+        Location loc = new Location(ipd.getLatitude(),ipd.getLongitude());
+        return numberOfPurchasesNearby(id, loc);
+    }
 }
