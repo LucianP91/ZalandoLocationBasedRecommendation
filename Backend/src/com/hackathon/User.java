@@ -1,8 +1,6 @@
 package Backend.src.com.hackathon;
 import Backend.src.com.hackathon.Location;
-/**
- * Created by Marciana on 19.11.2015.
- */
+
 public class User {
     private String firstName;
     private Location home;
