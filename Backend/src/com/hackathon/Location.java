@@ -1,11 +1,8 @@
 package Backend.src.com.hackathon;
 
-/**
- * Created by Marciana on 19.11.2015.
- */
 public class Location {
     private double longitude, latitude;
-    private final int R = 6373;
+    private final double R = 6373d;
     public Location( double latitude, double longitude) {
         this.longitude = longitude;
         this.latitude = latitude;
