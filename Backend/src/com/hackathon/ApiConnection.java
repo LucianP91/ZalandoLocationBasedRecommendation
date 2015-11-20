@@ -10,6 +10,8 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Currency;
+import java.util.Locale;
 
 public class ApiConnection {
     public final static String APIURL = "https://api.zalando.com/articles?category=cocktail-dresses&page=1&pageSize=10";
@@ -65,7 +67,7 @@ public class ApiConnection {
             id = "" +dress.get("id");
             name = "" +dress.get("name");
             final JSONObject priceObj = (JSONObject)((JSONObject)((JSONArray)dress.get("units")).get(0)).get("price");
-            price = "" +priceObj.get("formatted");
+            price = ("" +priceObj.get("formatted")).replace('£', (char)163);
             final JSONArray imageArr = (JSONArray)((JSONObject)dress.get("media")).get("images");
             pictureUrl = "" +((JSONObject)imageArr.get(2)).get("largeUrl");
             res.add(new Dress(id, name, price, pictureUrl));
