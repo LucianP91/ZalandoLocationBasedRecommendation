@@ -23,30 +23,48 @@
         <td valign="top">
             <table>
                 <tr>
-                    <td colspan="2">${preis}</td>
+                    <td colspan="2"><b>${preis}</b></td>
                 </tr>
                 <tr>
                     <td colspan="2">${name}</td>
                 </tr>
                 <tr>
-                    <td width="1%">
+                    <td width="1px">
                         <form action="index.jsp" method="post">
                             <input type="hidden" value="${id}" name="id">
                             <input type="hidden" value="${ip}" name="ip">
-                            <input type="submit" name="Kaufen" value="Kaufen">
+                            <input style="
+  -webkit-box-shadow: 1px 1px 1px #666666;
+  -moz-box-shadow: 1px 1px 1px #666666;
+  box-shadow: 1px 1px 1px #666666;
+  font-family: Arial;
+  font-size: 14px;
+  padding: 2px;
+  background: #a0aab0;
+  border: solid #000000 1px;
+  text-decoration: none;" type="submit" name="Kaufen" value="Kaufen">
                         </form>
                     </td>
                     <td>
                         <form action="index.jsp" method="post">
-                            <input type="submit" value="Zurück">
+                            <input style="
+  -webkit-box-shadow: 1px 1px 1px #666666;
+  -moz-box-shadow: 1px 1px 1px #666666;
+  box-shadow: 1px 1px 1px #666666;
+  font-family: Arial;
+  font-size: 14px;
+  padding: 2px;
+  background: #a0aab0;
+  border: solid #000000 1px;
+  text-decoration: none;" type="submit" value="Zurück">
                         </form>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">${warnung}</td>
+                    <td colspan="2" style="border-top: 1px black solid">${warnung}</td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         <form name="myForm" action="dressPage.jsp" method="post">
                             <input type="hidden" name="dressid1" id="dressid1">
                             <input type="hidden" name="ip" id="ip">

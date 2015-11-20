@@ -40,19 +40,20 @@ public class ActionServlet extends HttpServlet {
             ArrayList<Dress> recDress = ApiConnection.getRecommendationsWithLowNumberOfPurchases(id, ip);
             request.setAttribute("warnung", "Das Kleid wurde in deiner Nähe schon verdammt oft gekauft! Kauf mal lieber was anderes.");
             if (recDress != null && recDress.get(0) != null && recDress.get(1) != null && recDress.get(2) != null) {
-                request.setAttribute("htmlText", "<table><tr><td>" +
-                        recDress.get(0).getName() + "<br>" +
+                request.setAttribute("htmlText", "<table width='1px'><tr><td>" +
+                        recDress.get(0).getName() + "</td><td>" +
+                        recDress.get(1).getName() + "</td><td>" +
+                        recDress.get(2).getName() + "</td><td>" +
+                        "</tr><tr><td>" +
                         "<button type=\"button\" onclick=\"document.getElementById('dressid1').value='" + recDress.get(0).getId() + "'; document.myForm.submit();\">\n" +
                         "   <img width=\"104px\" src=\"" + recDress.get(0).getPictureUrl() + "\">\n" +
                         "</button>" +
                         "</td>" +
                         "<td>" +
-                        recDress.get(1).getName() + "<br>" +
                         "<button type=\"button\" onclick=\"document.getElementById('dressid1').value='" + recDress.get(1).getId() + "'; document.myForm.submit();\">\n" +
                         "   <img width=\"104px\" src=\"" + recDress.get(1).getPictureUrl() + "\">\n" +
                         "</button>" +
                         "</td><td>" +
-                        recDress.get(2).getName() + "<br>" +
                         "<button type=\"button\" onclick=\"document.getElementById('dressid1').value='" + recDress.get(2).getId() + "'; document.myForm.submit();\">\n" +
                         "   <img width=\"104px\" src=\"" + recDress.get(2).getPictureUrl() + "\">\n" +
                         "</button>" +
