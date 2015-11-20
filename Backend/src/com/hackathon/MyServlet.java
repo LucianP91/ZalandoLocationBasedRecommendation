@@ -31,6 +31,10 @@ public class MyServlet extends HttpServlet{
             request.setAttribute("pic"+i, dresses.get(i).getPictureUrl());
             request.setAttribute("dressid"+i, dresses.get(i).getId());
         }
+
+        if(request.getParameter("id") != null){
+            TransactionHistory.addTransaction(request.getParameter("id"), request.getParameter("ip"));
+        }
     }
 
     public void doGet(HttpServletRequest request,
