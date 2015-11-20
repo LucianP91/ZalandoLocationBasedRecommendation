@@ -5,6 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello Backend.");
-        ApiConnection.curlURL(APIURL);
+        //ApiConnection.curlURL(APIURL);
+        System.out.println(ApiConnection.getIpDetails("134.61.129.229"));
     }
 }
