@@ -67,7 +67,7 @@ public class ApiConnection {
         return res;
     }
 
-    public static ArrayList<Dress> getRecommodationsWithLowNumberOfPurchases(String id, String ip) {
+    public static ArrayList<Dress> getRecommendationsWithLowNumberOfPurchases(String id, String ip) {
         ArrayList<Dress> res = new ArrayList<>();
 
         String response = fetchUrl(RECOMMODATION_URL + id);
@@ -82,9 +82,15 @@ public class ApiConnection {
         for (Object obj : jsonArr) {
             JSONObject jsonDress = (JSONObject) obj;
             Dress dress = parseJsonDress(jsonDress);
-            if (TransactionHistory.numberOfPurchasesNearIp(dress.getId(), ip) >= TransactionHistory.PURCHASE_THRESHOLD) {
-
+            if (TransactionHistory.numberOfPurchasesNearIp(dress.getId(), ip) < TransactionHistory.PURCHASE_THRESHOLD) {
+                res.add(dress);
             }
+        }
+
+        // Return at least 3 recommendations.
+        while (res.size() < 3) {
+                JSONObject obj = (JSONObject) jsonArr.get((res.size()));
+                res.add(parseJsonDress(obj));
         }
 
         return res;
