@@ -68,6 +68,12 @@ public class ApiConnection {
     }
 
 
+    /**
+     * Fetches the recommended dresses for a given one, w.r.t. number of purchases near given ip.
+     * @param id The id where to find similar dresses to.
+     * @param ip Ip for checking nearby number of purchases.
+     * @return At least 3 dresses, if possible with low purchase rate nearby.
+     */
     public static ArrayList<Dress> getRecommendationsWithLowNumberOfPurchases(String id, String ip) {
         ArrayList<Dress> res = new ArrayList<>();
 
