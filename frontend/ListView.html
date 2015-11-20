@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <form action="${pageContext.request.contextPath}/myservlet" method="post">
+    <table>
+        <tr>
+            <td colspan="2">
+                <h1>Welcome to Zalando location-based recommendations</h1>
+            </td>
+        </tr>
+        <tr>
+            <td><input id="searchField" value="" title="mySearchField"></td>
+            <td align="left"><button>Suchen</button></td>
+        </tr>
+        <tr>
+            <td>
+                <table id="clothItems">
+                    <tr>
+                        <td>
+                            item1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            item2
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
