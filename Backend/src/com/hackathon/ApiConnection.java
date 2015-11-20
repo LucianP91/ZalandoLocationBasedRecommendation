@@ -12,6 +12,7 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 
 public class ApiConnection {
+    public final static String APIURL = "https://api.zalando.com/articles?category=cocktail-dresses&page=1&pageSize=10";
 
     /**
      * Fetches the given URL.

@@ -15,7 +15,7 @@
     <servlet>
         <servlet-name>Penis</servlet-name>
         <servlet-class>web.ActionServlet</servlet-class>
-        <description>Suck my balls</description>
+        <description>Suck my tits</description>
     </servlet>
     <servlet-mapping>
         <servlet-name>Penis</servlet-name>

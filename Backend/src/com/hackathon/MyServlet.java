@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 @WebServlet
 public class MyServlet extends HttpServlet{
@@ -16,14 +17,20 @@ public class MyServlet extends HttpServlet{
 
     public void init() throws ServletException {
         System.out.println("Server initialized. This is the init call");
-        msg = "STFU";
     }
 
     public void service(ServletRequest request,
                         ServletResponse response)
             throws ServletException, IOException {
         System.out.println("MyServlet: service");
-        request.setAttribute("myKey", "myVariable");
+
+        ArrayList<Dress> dresses = ApiConnection.curlURL(ApiConnection.APIURL);
+
+        for(int i=0; i<dresses.size(); i++){
+            request.setAttribute("dress" + i, dresses.get(i).getName());
+            request.setAttribute("pic"+i, dresses.get(i).getPictureUrl());
+            request.setAttribute("dressid"+i, dresses.get(i).getId());
+        }
     }
 
     public void doGet(HttpServletRequest request,
