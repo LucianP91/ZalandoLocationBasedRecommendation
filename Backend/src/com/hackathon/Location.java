@@ -32,10 +32,4 @@ public class Location {
         double c = 2* Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
         return R *c;
     }
-
- public static void main(String[] args){
-     Location Aachen= new Location(50.7753455,6.0838868);
-     Location Berlin = new Location(52.519171,13.4060912);
-     System.out.println(Aachen.getDistance(Berlin));
- }
 }
