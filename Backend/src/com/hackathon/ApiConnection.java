@@ -81,6 +81,8 @@ public class ApiConnection {
         }
         for (Object obj : jsonArr) {
             JSONObject jsonDress = (JSONObject) obj;
+            System.out.println("========Parse dress========");
+            System.out.println("" +jsonDress);
             Dress dress = parseJsonDress(jsonDress);
             if (TransactionHistory.numberOfPurchasesNearIp(dress.getId(), ip) < TransactionHistory.PURCHASE_THRESHOLD) {
                 res.add(dress);
