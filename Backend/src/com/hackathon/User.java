@@ -14,15 +14,7 @@ public class User {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public Location getHome() {
         return home;
-    }
-
-    public void setHome(Location home) {
-        this.home = home;
     }
 }

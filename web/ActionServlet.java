@@ -2,7 +2,6 @@ package web;
 
 import Backend.src.com.hackathon.ApiConnection;
 import Backend.src.com.hackathon.Dress;
-import Backend.src.com.hackathon.Main;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Objects;
 
 @WebServlet(name = "actionServlet")
 public class ActionServlet extends HttpServlet {
