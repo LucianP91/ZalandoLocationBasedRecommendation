@@ -61,11 +61,12 @@ public class ApiConnection {
 
         JSONArray array = (JSONArray)json.get("content");
         for (int i=0; i < 10; i++) {
-            res.add(parseJsonDress((JSONObject) array.get(i)));
+            res.add(parseJsonDress((JSONObject) array.get(i), true));
             System.out.println(res.get(i));
         }
         return res;
     }
+
 
     public static ArrayList<Dress> getRecommendationsWithLowNumberOfPurchases(String id, String ip) {
         ArrayList<Dress> res = new ArrayList<>();
@@ -81,9 +82,7 @@ public class ApiConnection {
         }
         for (Object obj : jsonArr) {
             JSONObject jsonDress = (JSONObject) obj;
-            System.out.println("========Parse dress========");
-            System.out.println("" +jsonDress);
-            Dress dress = parseJsonDress(jsonDress);
+            Dress dress = parseJsonDress(jsonDress, false);
             if (TransactionHistory.numberOfPurchasesNearIp(dress.getId(), ip) < TransactionHistory.PURCHASE_THRESHOLD) {
                 res.add(dress);
             }
@@ -92,7 +91,7 @@ public class ApiConnection {
         // Return at least 3 recommendations.
         while (res.size() < 3) {
                 JSONObject obj = (JSONObject) jsonArr.get((res.size()));
-                res.add(parseJsonDress(obj));
+                res.add(parseJsonDress(obj, false));
         }
 
         return res;
@@ -103,14 +102,20 @@ public class ApiConnection {
      * @param dress JSONObject to scan.
      * @return Dress object holding the extracted values.
      */
-    private static Dress parseJsonDress(JSONObject dress) {
+    private static Dress parseJsonDress(JSONObject dress, boolean hasPrice) {
         String id, name, price, pictureUrl;
         id = "" +dress.get("id");
         name = "" +dress.get("name");
-        final JSONObject priceObj = (JSONObject)((JSONObject)((JSONArray)dress.get("units")).get(0)).get("price");
-        price = "" +priceObj.get("formatted");
-        final JSONArray imageArr = (JSONArray)((JSONObject)dress.get("media")).get("images");
-        pictureUrl = "" +((JSONObject)imageArr.get(2)).get("largeUrl");
+        final JSONArray imageArr =(JSONArray)((JSONObject)dress.get("media")).get("images");
+        if (hasPrice) {
+            final JSONObject priceObj = (JSONObject) ((JSONObject) ((JSONArray) dress.get("units")).get(0)).get("price");
+            price = "" + priceObj.get("formatted");
+            pictureUrl = "" +((JSONObject)imageArr.get(2)).get("largeUrl");
+        } else {
+            price = "";
+            pictureUrl = "" +((JSONObject)imageArr.get(0)).get("largeUrl");
+        }
+
         return new Dress(id, name, price, pictureUrl);
     }
 
