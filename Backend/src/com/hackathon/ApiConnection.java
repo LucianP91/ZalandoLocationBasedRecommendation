@@ -117,12 +117,10 @@ public class ApiConnection {
         if (hasPrice) {
             final JSONObject priceObj = (JSONObject) ((JSONObject) ((JSONArray) dress.get("units")).get(0)).get("price");
             price = ("" + priceObj.get("formatted")).replaceAll("\u00A3", "Pounds ");
-            pictureUrl = "" +((JSONObject)imageArr.get(2)).get("largeUrl");
         } else {
             price = "";
-            pictureUrl = "" +((JSONObject)imageArr.get(0)).get("largeUrl");
         }
-
+        pictureUrl = "" +((JSONObject)imageArr.get(0)).get("largeUrl");
         return new Dress(id, name, price, pictureUrl);
     }
 
