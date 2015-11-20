@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="myWebExploded">
+    <output-path>$PROJECT_DIR$/out/production/ZalandoLocationBasedRecommendation/Backend/src/com/hackathon</output-path>
+    <root id="root" />
+  </artifact>
+</component>
