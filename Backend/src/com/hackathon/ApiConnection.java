@@ -10,11 +10,10 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.Currency;
-import java.util.Locale;
 
 public class ApiConnection {
     public final static String APIURL = "https://api.zalando.com/articles?category=cocktail-dresses&page=1&pageSize=10";
+    public final static String RECOMMODATION_URL = "https://api.zalando.com/recommendations/";
 
     /**
      * Fetches the given URL.
@@ -74,6 +73,14 @@ public class ApiConnection {
             System.out.println(res.get(i));
         }
         return res;
+    }
+
+    public ArrayList<Dress> getRecommodationsWithLowNumberOfPurchases(String id, String ip) {
+        ArrayList<Dress> res = new ArrayList<>();
+
+        String response = fetchUrl(RECOMMODATION_URL + id);
+
+        return null;
     }
 
     /**
