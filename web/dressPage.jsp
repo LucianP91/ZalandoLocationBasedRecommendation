@@ -4,6 +4,16 @@
     <meta charset="ISO-8859-1">
     <title></title>
     <jsp:include page="/actionServlet"/>
+    <style>
+        button[type=button]{
+            -webkit-box-shadow: 1px 1px 1px #666666;
+            -moz-box-shadow: 1px 1px 1px #666666;
+            box-shadow: 1px 1px 1px #666666;
+            background-color: white;
+            padding: 0px;
+            border: solid #000000 1px;
+            text-decoration: none;}
+    </style>
 </head>
 <body>
 <table>
@@ -13,7 +23,7 @@
         </td>
     </tr>
     <tr>
-        <td>
+        <td width="1px">
             <table>
                 <tr>
                     <td><img src="${bild}" height=600px></td>
