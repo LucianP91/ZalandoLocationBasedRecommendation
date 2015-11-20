@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 public class TransactionHistory {
+    public static final int PURCHASE_THRESHOLD = 2;
     private static HashMap<String,ArrayList<Transaction>> history = new HashMap<>();
 
     private static final int HISTORYDAYS=30;

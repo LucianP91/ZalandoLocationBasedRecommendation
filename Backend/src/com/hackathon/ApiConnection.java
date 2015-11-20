@@ -80,8 +80,11 @@ public class ApiConnection {
             return res;
         }
         for (Object obj : jsonArr) {
-            JSONObject dress = (JSONObject) obj;
-            res.add(parseJsonDress(dress));
+            JSONObject jsonDress = (JSONObject) obj;
+            Dress dress = parseJsonDress(jsonDress);
+            if (TransactionHistory.numberOfPurchasesNearIp(dress.getId(), ip) >= TransactionHistory.PURCHASE_THRESHOLD) {
+
+            }
         }
 
         return res;
