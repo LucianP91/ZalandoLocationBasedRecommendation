@@ -79,8 +79,8 @@ public class ApiConnection {
             System.err.println("" +response);
             return res;
         }
-        for(int i = 0; i < jsonArr.size(); i++) {
-            JSONObject dress = (JSONObject) jsonArr.get(i);
+        for (Object obj : jsonArr) {
+            JSONObject dress = (JSONObject) obj;
             res.add(parseJsonDress(dress));
         }
 
@@ -100,7 +100,7 @@ public class ApiConnection {
         price = "" +priceObj.get("formatted");
         final JSONArray imageArr = (JSONArray)((JSONObject)dress.get("media")).get("images");
         pictureUrl = "" +((JSONObject)imageArr.get(2)).get("largeUrl");
-        return new Dress(id, name, price, pictureUrl));
+        return new Dress(id, name, price, pictureUrl);
     }
 
     /**
