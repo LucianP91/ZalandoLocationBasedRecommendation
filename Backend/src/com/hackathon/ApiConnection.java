@@ -61,15 +61,7 @@ public class ApiConnection {
 
         JSONArray array = (JSONArray)json.get("content");
         for (int i=0; i < 10; i++) {
-            JSONObject dress = (JSONObject) array.get(i);
-            String id, name, price, pictureUrl;
-            id = "" +dress.get("id");
-            name = "" +dress.get("name");
-            final JSONObject priceObj = (JSONObject)((JSONObject)((JSONArray)dress.get("units")).get(0)).get("price");
-            price = ("" +priceObj.get("formatted")).replace('£', (char)163);
-            final JSONArray imageArr = (JSONArray)((JSONObject)dress.get("media")).get("images");
-            pictureUrl = "" +((JSONObject)imageArr.get(2)).get("largeUrl");
-            res.add(new Dress(id, name, price, pictureUrl));
+            res.add(parseJsonDress((JSONObject) array.get(i)));
             System.out.println(res.get(i));
         }
         return res;
@@ -87,10 +79,28 @@ public class ApiConnection {
             System.err.println("" +response);
             return res;
         }
+        for(int i = 0; i < jsonArr.size(); i++) {
+            JSONObject dress = (JSONObject) jsonArr.get(i);
+            res.add(parseJsonDress(dress));
+        }
 
+        return res;
+    }
 
-
-        return null;
+    /**
+     * Creates a Dress object from JSON.
+     * @param dress JSONObject to scan.
+     * @return Dress object holding the extracted values.
+     */
+    private static Dress parseJsonDress(JSONObject dress) {
+        String id, name, price, pictureUrl;
+        id = "" +dress.get("id");
+        name = "" +dress.get("name");
+        final JSONObject priceObj = (JSONObject)((JSONObject)((JSONArray)dress.get("units")).get(0)).get("price");
+        price = "" +priceObj.get("formatted");
+        final JSONArray imageArr = (JSONArray)((JSONObject)dress.get("media")).get("images");
+        pictureUrl = "" +((JSONObject)imageArr.get(2)).get("largeUrl");
+        return new Dress(id, name, price, pictureUrl));
     }
 
     /**
