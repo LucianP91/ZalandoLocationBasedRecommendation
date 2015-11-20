@@ -4,6 +4,16 @@
     <meta charset="ISO-8859-1">
     <title></title>
     <jsp:include page="/test"/>
+    <style>
+        button[type=button]{
+        -webkit-box-shadow: 1px 1px 1px #666666;
+            -moz-box-shadow: 1px 1px 1px #666666;
+            box-shadow: 1px 1px 1px #666666;
+            background-color: white;
+            padding: 0px;
+            border: solid #000000 1px;
+            text-decoration: none;}
+    </style>
 </head>
 <body>
 <form name="myForm" action="dressPage.jsp" method="post">
@@ -22,80 +32,68 @@
                         <td>
                             <table id="clothItems">
                                 <tr>
-                                    <td id="dress0">
-                                        ${dress0}<br>
+                                    <td id="dress0" style="padding-bottom: 50px; width: 350px;">
+                                       <b> ${dress0}<br></b>
                                         <button type="button" onclick="document.getElementById('dressid1').value='${dressid0}'; document.myForm.submit();">
                                             <img width="304px" src="${pic0}">
                                         </button>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td id="dress1">
-                                        ${dress1}<br>
+                                    <td id="dress1" style="padding-bottom: 50px; width: 350px;">
+                                        <b> ${dress1}<br></b>
                                         <button type="button" onclick="document.getElementById('dressid1').value='${dressid1}'; document.myForm.submit();">
                                             <img width="304px" src="${pic1}">
                                         </button>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td id="dress2">
-                                        ${dress2}<br>
+                                    <td id="dress2" style="padding-bottom: 50px;">
+                                        <b> ${dress2}<br></b>
                                             <button type="button" onclick="document.getElementById('dressid2').value='${dressid1}'; document.myForm.submit();">
                                                 <img width="304px" src="${pic2}">
                                             </button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td id="dress3">
-                                        ${dress3}<br>
+                                    <td id="dress3" style="padding-bottom: 50px; width: 350px;">
+                                        <b> ${dress3}<br></b>
                                             <button type="button" onclick="document.getElementById('dressid1').value='${dressid3}'; document.myForm.submit();">
                                                 <img width="304px" src="${pic3}">
                                             </button>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td id="dress4">
-                                        ${dress4}<br>
+                                    <td id="dress4" style="padding-bottom: 50px; width: 350px;">
+                                        <b> ${dress4}<br></b>
                                             <button type="button" onclick="document.getElementById('dressid1').value='${dressid4}'; document.myForm.submit();">
                                                 <img width="304px" src="${pic4}">
                                             </button>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td id="dress5">
-                                        ${dress5}<br>
+                                    <td id="dress5" style="padding-bottom: 50px;">
+                                        <b> ${dress5}<br></b>
                                             <button type="button" onclick="document.getElementById('dressid1').value='${dressid5}'; document.myForm.submit();">
                                                 <img width="304px" src="${pic5}">
                                             </button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td id="dress6">
-                                        ${dress6}<br>
+                                    <td id="dress6" style="padding-bottom: 50px; width: 350px;">
+                                        <b> ${dress6}<br></b>
                                             <button type="button" onclick="document.getElementById('dressid1').value='${dressid6}'; document.myForm.submit();">
                                                 <img width="304px" src="${pic6}">
                                             </button>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td id="dress7">
-                                        ${dress7}<br
+                                    <td id="dress7" style="padding-bottom: 50px; width: 350px;">
+                                        <b> ${dress7}<br></b>
                                             <button type="button" onclick="document.getElementById('dressid1').value='${dressid7}'; document.myForm.submit();">
                                                 <img width="304px" src="${pic7}">
                                             </button>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td id="dress8">
-                                        ${dress8}<br>
+                                    <td id="dress8" style="padding-bottom: 50px;">
+                                        <b> ${dress8}<br></b>
                                             <button type="button" onclick="document.getElementById('dressid1').value='${dressid8}'; document.myForm.submit();">
                                                 <img width="304px" src="${pic8}">
                                             </button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td id="dress9">
-                                        ${dress9}<br>
+                                    <td id="dress9" style="padding-bottom: 50px; width: 350px;">
+                                        <b> ${dress9}<br></b>
                                             <button type="button" onclick="document.getElementById('dressid1').value='${dressid9}'; document.myForm.submit();">
                                                 <img width="304px" src="${pic9}">
                                             </button>
