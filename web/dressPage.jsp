@@ -47,7 +47,12 @@
                 </tr>
                 <tr>
                     <td>
-                        <form name="myForm" action="dressPage.jsp" method="post">${htmlText}</form></td>
+                        <form name="myForm" action="dressPage.jsp" method="post">
+                            <input type="hidden" name="dressid1" id="dressid1">
+                            <input type="hidden" name="ip" id="ip">
+                            ${htmlText}
+                        </form>
+                    </td>
                 </tr>
             </table>
         </td>
