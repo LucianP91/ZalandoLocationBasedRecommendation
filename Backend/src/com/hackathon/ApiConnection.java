@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class ApiConnection {
     public final static String APIURL = "https://api.zalando.com/articles?category=cocktail-dresses&page=1&pageSize=10";
     private final static String RECOMMODATION_URL = "https://api.zalando.com/recommendations/";
+    private  final static  String ARTICLE_URL = "https://api.zalando.com/articles/";
 
     /**
      * Fetches the given URL.
@@ -144,5 +145,22 @@ public class ApiConnection {
         double latitude = (Double) json.get("latitude");
         double longitude = (Double) json.get("longitude");
         return new IpDetails(ip, city, latitude, longitude);
+    }
+
+    /**
+     * Fetches a single dress via API.
+     * @param id The article's id to fetch.
+     * @return A Dress object holding the data.
+     */
+    public static Dress getDressForId(String id) {
+        String response = fetchUrl(ARTICLE_URL + id);
+        try {
+            JSONObject obj = (JSONObject) new JSONParser().parse(response);
+            return parseJsonDress(obj, true);
+        } catch (ParseException e) {
+            System.err.println("Error parsing JSON.");
+            System.err.println("" +response);
+            return new Dress("", "", "", "");
+        }
     }
 }
