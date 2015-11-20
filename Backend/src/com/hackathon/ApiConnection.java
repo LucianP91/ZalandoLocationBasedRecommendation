@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class ApiConnection {
     public final static String APIURL = "https://api.zalando.com/articles?category=cocktail-dresses&page=1&pageSize=10";
-    public final static String RECOMMODATION_URL = "https://api.zalando.com/recommendations/";
+    private final static String RECOMMODATION_URL = "https://api.zalando.com/recommendations/";
 
     /**
      * Fetches the given URL.
@@ -75,10 +75,20 @@ public class ApiConnection {
         return res;
     }
 
-    public ArrayList<Dress> getRecommodationsWithLowNumberOfPurchases(String id, String ip) {
+    public static ArrayList<Dress> getRecommodationsWithLowNumberOfPurchases(String id, String ip) {
         ArrayList<Dress> res = new ArrayList<>();
 
         String response = fetchUrl(RECOMMODATION_URL + id);
+        JSONArray jsonArr;
+        try {
+            jsonArr = (JSONArray) new JSONParser().parse(response);
+        } catch (ParseException e) {
+            System.err.println("Error parsing JSON.");
+            System.err.println("" +response);
+            return res;
+        }
+
+
 
         return null;
     }
